@@ -1,0 +1,53 @@
+.main {
+  height: calc(100vh - 8vh);
+  gap: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #5a5a5a transparent;
+}
+
+.section-wrapper {
+  position: relative;
+}
+
+.cards-container {
+  position: relative;
+}
+
+.scroll-btn {
+  cursor: pointer;
+
+  position: absolute;
+  z-index: 10;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #282828;
+  color: #ffffff;
+
+  font-size: 25px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+.scroll-btn:hover {
+  background-color: #3a3a3a;
+  transform: translateY(-50%) scale(1.05);
+}

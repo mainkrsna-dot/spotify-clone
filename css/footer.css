@@ -1,0 +1,56 @@
+.footer-links {
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.company>ul,
+.communities>ul,
+.useful-links>ul,
+.spotify-plans>ul {
+  list-style-type: none;
+  font-size: 16px;
+  color: #a7a7a7;
+  line-height: 1.3;
+}
+
+.company>ul>li,
+.communities>ul>li,
+.useful-links>ul>li,
+.spotify-plans>ul>li {
+  margin-bottom: 5px;
+}
+
+.multiple-links {
+  gap: 55px;
+}
+
+.company>p,
+.communities>p,
+.useful-links>p,
+.spotify-plans>p {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.social-links button {
+  background-color: #292929;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  /* background: #a7a7a7; */
+}
+
+.social-links>button>img {
+  width: 20px;
+  height: 20px;
+}
+
+.spotify-copyright {
+  padding: 24px;
+  color: #a7a7a7;
+  font-size: 14px;
+  justify-content: right;
+}

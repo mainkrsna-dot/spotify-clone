@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Web Player: Music for everyone "CLONE"</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/utility.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/preview of spotify.css">
+  <link rel="stylesheet" href="../css/left.css">
+  <link rel="stylesheet" href="../css/right.css">
+  <link rel="stylesheet" href="../css/bottom-player.css">
+</head>
+
+<body>
+  <div class="header flex">
+    <div class="leftHeader flex item-center">
+      <div class="logo">
+        <img class="invert" src="../svgs/logos.svg" alt="spotify logo">
+      </div>
+      <div class="homeandsearch flex">
+        <div class="home">
+          <img src="../svgs/home.svg" alt="">
+        </div>
+        <div class="searchBar flex">
+          <img src="../svgs/search.svg" alt="">
+          <input type="text" placeholder="What do you want to play?">
+          <img class="browse" src="../svgs/browse.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="rightHeader flex">
+      <div class="section1 flex">
+        <p>Premium</p>
+        <p>Support</p>
+        <p>Download</p>
+      </div>
+      <!-- <div class="section2 flex">
+        <p> <img class="install" src="../svgs/install.svg" alt="">Install App</p>
+        <p>Sign up</p>
+        <button class="logIn">Log in</button> -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main flex">
+    <div class="left">
+      <div class="yourLibrary flex item-center">
+        <p>Your Library</p>
+        <button>
+          <img class="invert 
+          " src="../svgs/+sign.svg" alt="">
+          <p>Create</p>
+        </button>
+      </div>
+
+      <div class="playlistandpodcast flex">
+        <div class="playlist">
+          <p>Create your first playlist</p>
+          <p>It's easy, we'll help you</p>
+          <button class="createPlaylistButton">Create playlist</button>
+        </div>
+
+        <div class="podcast">
+          <p>Let's find some podcasts to follow</p>
+          <p>We'll keep you updated on new episoded</p>
+          <button class="browsePodcastButton">Browse podcasts</button>
+        </div>
+      </div>
+
+      <div class="imp-links language flex">
+        <p>Legal</p>
+        <p>Safety & Privacy Center</p>
+        <p>Privacy Policy</p>
+        <p>cookies</p>
+        <p>About Ads</p>
+        <p>Accessibility</p>
+      </div>
+
+      <div class="cookies">Cookies</div>
+
+      <div class="language-selector">
+        <button><img class="invert" src="../svgs/language.svg" alt="">English</button>
+      </div>
+    </div>
+
+    <div class="right border flex">
+
+      <div class="section-wrapper">
+
+        <div class="trending-songs-heading border flex">
+          <h2>Trending songs</h2>
+          <p>Show all</p>
+        </div>
+
+        <div class="cards-container">
+          <button class="scroll-btn left-btn">‹</button>
+
+          <section class="trending-songs-cards flex border">
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e0224a93a0b07380c034f7d9d74" alt="">
+
+                <button class="play-button" data-song="../songs/Radhimaa.mp3">▶</button>
+              </div>
+              <h3>Radhimaa - From "Think Indie"</h3>
+              <p>Sai Abhyankkar, Nargis Teji, Asma Tej</p>
+            </div>
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e029f51d5de5d7a52c40bc309de" alt="">
+
+                <button class="play-button" data-song="song-2">▶</button>
+              </div>
+              <h3>Dhaagon Se Baandhaa - From "Raksha Bandhan"</h3>
+              <p>Himesh Reshammiya, Arijit Singh, Shreya Ghoshal</p>
+            </div>
+
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e022aa970b56008060757cc8468" alt="">
+
+                <button class="play-button" data-song="song-3">▶</button>
+              </div>
+              <h3>Tera Mera Rishta - New Version</h3>
+              <p>Mithoon, Pritam, Mustafa Zahid</p>
+            </div>
+
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02baf43c5433ef41254203332d" alt="">
+
+                <button class="play-button" data-song="song-4">▶</button>
+              </div>
+              <h3>IYKYK</h3>
+              <p>Jxggi, Dishant, Sickboi</p>
+            </div>
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02b3d497bf9ef6b3ce17e53757" alt="">
+
+                <button class="play-button" data-song="song-5">▶</button>
+              </div>
+              <h3>Phoolon Ka Taron Ka - Kishore Kumar</h3>
+              <p>Kishore Kumar, R. D. Burman</p>
+            </div>
+
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02e97f586c348b6d8f824303b4" alt="">
+
+                <button class="play-button" data-song="song-6">▶</button>
+              </div>
+              <h3>Bhaiya Mere Rakhi Ke Bandhan Ko</h3>
+              <p>Lata Mangeshkar</p>
+            </div>
+
+            <div class="card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02e461b9dfdf50466bc608a280" alt="">
+
+                <button class="play-button" data-song="song-7">▶</button>
+              </div>
+              <h3>Tenu Sang Rakhna</h3>
+              <p>Achint, Arijit Singh, Anumita Nadesan, Varun Grover</p>
+            </div>
+          </section>
+
+          <button class="scroll-btn right-btn">›</button>
+        </div>
+      </div>
+
+      <div class="section-wrapper">
+        <div class="popular-artists-heading border flex">
+          <h2>Popular artists</h2>
+          <p>Show all</p>
+        </div>
+
+        <div class="cards-container">
+          <button class="scroll-btn left-btn">‹</button>
+
+          <section class="popular-artists-cards flex border">
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616100005174cb6926f44f620555ba444fca" alt="">
+
+                <button class="play-button" data-song="song-8">▶</button>
+              </div>
+              <h3>Pritam</h3>
+              <p>Artist</p>
+            </div>
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c" alt="">
+
+                <button class="play-button" data-song="song-9">▶</button>
+              </div>
+              <h3>A.R.Rahman</h3>
+              <p>Artist</p>
+            </div>
+
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616100005174adfb0b2df04b77e43b5f7375" alt="">
+
+                <button class="play-button" data-song="song-10">▶</button>
+              </div>
+              <h3>Arijit Singh</h3>
+              <p>Artist</p>
+            </div>
+
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616100005174bb4064bef3a825344d5eb79e" alt="">
+
+                <button class="play-button" data-song="song-11">▶</button>
+              </div>
+              <h3>Sachin-Jigar</h3>
+              <p>Artist</p>
+            </div>
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab6761610000517490b6c3d093f9b02aad628eaf" alt="">
+
+                <button class="play-button" data-song="song-12">▶</button>
+              </div>
+              <h3>Vishal-Shekhar</h3>
+              <p>Artist</p>
+            </div>
+
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616100005174c40600e02356cc86f0debe84" alt="">
+
+                <button class="play-button" data-song="song-13">▶</button>
+              </div>
+              <h3>Atif Aslam</h3>
+              <p>Artist</p>
+            </div>
+
+            <div class="artists-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab676161000051740f0be2054fe9594026a6b843" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Anirudh Ravichander</h3>
+              <p>Artist</p>
+            </div>
+          </section>
+
+          <button class="scroll-btn right-btn">›</button>
+        </div>
+      </div>
+
+      <div class="section-wrapper">
+        <div class="popular-albums-and-singles-heading border flex">
+          <h2>Popular albums and singles</h2>
+          <p>Show all</p>
+        </div>
+
+        <div class="cards-container">
+          <button class="scroll-btn left-btn">‹</button>
+
+          <section class="popular-albums-and-singles-cards flex border">
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Aashiqui 2</h3>
+              <p>Mithoon, Ankit Tiwari,Jeet Gannguli</p>
+            </div>
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02707ea5b8023ac77d31756ed4" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Yeh Jawaani Hai Deewani</h3>
+              <p>Pritam</p>
+            </div>
+
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02711c1639b4bc0f9978ae77a6" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Sanam Teri Kasam (Original Motion Picture Soundtrack)</h3>
+              <p>Himesh Reshammiya, SameerAnjaan, Subrat Sinha, Shabbir Ahmed</p>
+            </div>
+
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02292341cd3e621d7f9171331f" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Finding Her</h3>
+              <p>Kushagra, Bharath, Saaheal</p>
+            </div>
+
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02a5183fa4b99bcec1f506418d" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Young G.O.A.T</h3>
+              <p>Cheema Y, Gur Sidhu</p>
+            </div>
+
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e02773c5f60bcb309ef8802e4ef" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Raanjhan (From "Do Patti")</h3>
+              <p>Sachet-Parampara, Parampara Tandon, Kausar Munir</p>
+            </div>
+
+            <div class="album-and-singles-card">
+              <div class="image-wrapper">
+                <img src="https://i.scdn.co/image/ab67616d00001e021aa5adad8593923dcdf1a7d0" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <h3>Ultimate Love Songs - Arijit Singh</h3>
+              <p>Arijit Singh</p>
+            </div>
+          </section>
+
+          <button class="scroll-btn right-btn">›</button>
+        </div>
+      </div>
+
+
+      <div class="section-wrapper">
+        <div class="popular-radio-heading border flex">
+          <h2>Popular radio</h2>
+          <p>Show all</p>
+        </div>
+
+        <div class="cards-container">
+          <button class="scroll-btn left-btn">‹</button>
+
+          <section class="popular-radio-cards flex border">
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4YRxDV8wJFPHPTeXepOstw/en"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With Jeet Gannguli, Pritam, Shaarib Toshi and more</p>
+            </div>
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4fEkbug6kZzzJ8eYX6Kbbp/en-GB"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With Pritam, Vishal Mishra, Vishal-Shekhar and more</p>
+            </div>
+
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0oOet2f43PA68X5RxKobEy/en"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With A.R. Rahman, Atif Aslam, Salim-Sulaiman and more</p>
+            </div>
+
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/3gBKY0y3dFFVRqicLnVZYz/en"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With Vinod Rathod, Kumar Sanu, Udit Narayan and more</p>
+            </div>
+
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/2FKWNmZWDBZR4dE5KX4plR/en"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With Karan Aujla, Harrdy Sandhu, AP Dhillon and more</p>
+            </div>
+
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/1mYsTxnqsietFxj1OgoGbG/en"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With Hariharan, Chinmayi, Arijit Singh and more</p>
+            </div>
+
+            <div class="radio-card">
+              <div class="image-wrapper">
+                <img
+                  src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/7uIbLdzzSEqnX0Pkrb56cR/en-GB"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>With Badshah, Harrdy Sandhu, Guru Randhawa and more</p>
+            </div>
+          </section>
+
+          <button class="scroll-btn right-btn">›</button>
+        </div>
+      </div>
+
+
+      <div class="section-wrapper">
+        <div class="featured-charts-heading border flex">
+          <h2>Featured charts</h2>
+          <p>Show all</p>
+        </div>
+
+        <div class="cards-container">
+          <button class="scroll-btn left-btn">‹</button>
+
+          <section class="featured-charts-cards flex border">
+            <div class="charts-card">
+              <div class="image-wrapper">
+                <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>Your weekly update of the most played tracks right now - Global.</p>
+            </div>
+            <div class="charts-card">
+              <div class="image-wrapper">
+                <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_in_default.jpg" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>Your weekly update of the most played tracks right now - Global.</p>
+            </div>
+
+            <div class="charts-card">
+              <div class="image-wrapper">
+                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg"
+                  alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>Your daily update of the most played tracks right now - Global.</p>
+            </div>
+
+            <div class="charts-card">
+              <div class="image-wrapper">
+                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_in_default.jpg" alt="">
+
+                <button class="play-button" data-song="song-14">▶</button>
+              </div>
+              <p>Your daily update of the most played tracks right now - Global.</p>
+            </div>
+          </section>
+
+          <button class="scroll-btn right-btn">›</button>
+        </div>
+      </div>
+
+      <div class="footer border">
+        <div class="footer-links flex border">
+          <div class="multiple-links flex border">
+            <div class="company">
+              <p>Company</p>
+              <ul>
+                <li>About</li>
+                <li>Jobs</li>
+                <li>For the Record</li>
+              </ul>
+            </div>
+
+            <div class="communities">
+              <p>Communities</p>
+              <ul>
+                <li>For Artists</li>
+                <li>Developers</li>
+                <li>Advertising</li>
+                <li>Investors</li>
+                <li>Vendors</li>
+              </ul>
+            </div>
+
+            <div class="useful-links">
+              <p>Useful links</p>
+              <ul>
+                <li>Support</li>
+                <li>Free Mobile App</li>
+                <li>Popular by Country</li>
+                <li>Import your music</li>
+              </ul>
+            </div>
+
+            <div class="spotify-plans">
+              <p>Spotify Plans</p>
+              <ul>
+                <li>Premium Standard</li>
+                <li>Premium Platinum</li>
+                <li>Premium Student</li>
+                <li>Spotify Free</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <button class="instagram">
+              <img class="invert" src="../svgs/insta.svg" alt="">
+            </button>
+            <button class="x">
+              <img class="invert" src="../svgs/x.svg" alt="">
+            </button>
+            <button class="facebook">
+              <img class="invert" src="../svgs/facebook.svg" alt="">
+            </button>
+          </div>
+
+        </div>
+        <div class="spotify-copyright border flex">
+          © 2026 Spotify AB
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-player flex">
+    <div class="song-info">
+      <img class="song-image" src="" alt="">
+      <h4 class="current-song-name"></h4>
+      <p class="artist-name"></p>
+    </div>
+
+    <div class="player-controls flex">
+      <div class="controls flex">
+        <button>⏮</button>
+        <button>▶</button>
+        <button>⏭</button>
+      </div>
+
+      <div class="seekbar-container">
+        <span>0:00</span>
+        <input type="range" min="0" max="100" value="0">
+        <span>0:00</span>
+      </div>
+    </div>
+
+    <div class="volume-control">
+      <span>🔊</span>
+      <input type="range" min="0" max="100" value="100">
+    </div>
+  </div>
+
+  <!-- <div class="signUpForFree">
+    <h5>Preview of Spotify</h5>
+    <div class="flex">
+      <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+      <button class="signUpFree">Sign up free</button>
+    </div>
+  </div> -->
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

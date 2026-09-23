@@ -1,0 +1,46 @@
+.signUpForFree {
+  position: fixed;
+  bottom: 8px;
+  z-index: 10;
+  left: 8px;
+  right: 8px;
+
+  height: 72px;
+  padding: 10px 16px;
+
+  background: linear-gradient(90deg, #c21a9c, #4b9cf5);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signUpForFree h5 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  /* margin-bottom: -13px ; */
+}
+
+.signUpForFree>div {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signUpForFree p {
+  font-size: 17px;
+}
+
+
+.signUpFree {
+  padding: 14px 34px;
+  border: none;
+  border-radius: 25px;
+
+  background-color: white;
+  color: black;
+
+  font-size: 15px;
+  font-weight: bold;
+  white-space: nowrap;
+}
