@@ -21,14 +21,16 @@ A Spotify-inspired music player web application built using HTML5, CSS3 and Java
 
 ## Project Structure
 
-```text
 spotify-clone/
 ├── css/
 ├── html/
 ├── js/
 ├── songs/
 └── svgs/
-```
+
+## Live Demo
+
+[View Live Demo](https://mainkrsna-dot.github.io/spotify-clone/)
 
 ## How to Run
 
