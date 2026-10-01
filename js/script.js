@@ -65,19 +65,48 @@ rightBtn.forEach(element => {
 
 });
 
+
 let songImage = document.querySelector(".song-image");
 let currentSongName = document.querySelector(".current-song-name");
 let artistName = document.querySelector(".artist-name");
 
 let bottomPlayer = document.querySelector(".bottom-player");
 
-let playButtons = document.querySelectorAll(".play-button")
+let playButtons = document.querySelectorAll(".play-button");
 
 let audio = new Audio();
 
 let currentButton = null;
 
+let currentPlaylist = [];
+let currentIndex = 0;
+
+let isShuffleOn = false;
+let isRepeatOn = false;
+
+let shuffleButton = document.querySelector(".shuffle-btn");
+
+shuffleButton.addEventListener("click", () => {
+
+    isShuffleOn = !isShuffleOn;
+
+    shuffleButton.classList.toggle("active", isShuffleOn);
+
+});
+
+
+let repeatButton = document.querySelector(".repeat-btn");
+
+repeatButton.addEventListener("click", () => {
+
+    isRepeatOn = !isRepeatOn;
+
+    repeatButton.classList.toggle("active", isRepeatOn);
+
+});
+
 let controlButtons = document.querySelectorAll(".controls button");
+
 
 controlButtons[1].addEventListener("click", () => {
 
@@ -100,79 +129,278 @@ controlButtons[1].addEventListener("click", () => {
 
 });
 
+
 playButtons.forEach(button => {
+
     button.addEventListener("click", () => {
 
         let card = button.parentElement.parentElement;
 
-
-        let image = card.querySelector("img")
-        let songName = card.querySelector("h3")
-        let artist = card.querySelector("p")
+        let image = card.querySelector("img");
+        let songName = card.querySelector("h3");
+        let artist = card.querySelector("p");
 
         songImage.src = image.src;
-        currentSongName.textContent = songName.textContent;
-        artistName.textContent = artist.textContent;
+
+        if (songName) {
+            currentSongName.textContent = songName.textContent;
+        }
+
+        if (artist) {
+            artistName.textContent = artist.textContent;
+        }
 
         bottomPlayer.style.display = "flex";
+
 
         if (button === currentButton) {
 
             if (audio.paused) {
                 audio.play();
+
                 button.textContent = "⏸";
                 controlButtons[1].textContent = "⏸";
+
             } else {
                 audio.pause();
+
                 button.textContent = "▶";
                 controlButtons[1].textContent = "▶";
             }
 
+            return;
         }
-        else {
-            if (currentButton !== null) {
-                currentButton.textContent = "▶"
-            }
+
+
+        if (currentButton !== null) {
+            currentButton.textContent = "▶";
+        }
+
+
+        if (button.dataset.playlist) {
+
+            currentPlaylist = JSON.parse(button.dataset.playlist);
+            currentIndex = 0;
+
+            loadSong(currentPlaylist[currentIndex]);
+
+        } else {
+
+            currentPlaylist = [];
+            currentIndex = 0;
 
             audio.src = button.dataset.song;
-            currentButton = button;
-            audio.play();
-
-            button.textContent = "⏸"
-            controlButtons[1].textContent = "⏸";
         }
-    })
+
+
+        currentButton = button;
+
+        audio.play();
+
+        button.textContent = "⏸";
+        controlButtons[1].textContent = "⏸";
+
+    });
+
 });
 
-audio.addEventListener("ended", () => {
-    if (currentButton !== null) {
-        currentButton.textContent = "▶";
-        currentButton = null;
+
+controlButtons[2].addEventListener("click", () => {
+
+    if (currentPlaylist.length === 0) {
+        return;
     }
 
-    controlButtons[1].textContent = "▶";
-})
+    if (isShuffleOn) {
+
+        let randomIndex = Math.floor(Math.random() * currentPlaylist.length);
+
+        while (randomIndex === currentIndex && currentPlaylist.length > 1) {
+            randomIndex = Math.floor(Math.random() * currentPlaylist.length);
+        }
+
+        currentIndex = randomIndex;
+
+    } else {
+
+        if (currentIndex >= currentPlaylist.length - 1) {
+            audio.pause();
+            audio.currentTime = 0;
+
+            currentPlaylist = [];
+            currentIndex = 0;
+
+            controlButtons[1].textContent = "▶";
+
+            if (currentButton !== null) {
+                currentButton.textContent = "▶";
+                currentButton = null;
+            }
+
+            return;
+        }
+
+        currentIndex++;
+    }
+
+    loadSong(currentPlaylist[currentIndex]);
+    audio.play();
+
+    controlButtons[1].textContent = "⏸";
+
+    if (currentButton !== null) {
+        currentButton.textContent = "⏸";
+    }
+
+});
+
+controlButtons[0].addEventListener("click", () => {
+
+    if (currentPlaylist.length === 0) {
+        if (audio.src) {
+            audio.currentTime = 0;
+        }
+        return;
+    }
+
+    if (audio.currentTime > 3) {
+
+        audio.currentTime = 0;
+
+        return;
+    }
+
+    if (currentIndex > 0) {
+
+        currentIndex--;
+
+        loadSong(currentPlaylist[currentIndex]);
+        audio.play();
+
+        controlButtons[1].textContent = "⏸";
+
+        if (currentButton !== null) {
+            currentButton.textContent = "⏸";
+        }
+
+    }
+
+});
+
+
+audio.addEventListener("ended", () => {
+
+    if (isRepeatOn) {
+
+        audio.currentTime = 0;
+        audio.play();
+
+        controlButtons[1].textContent = "⏸";
+
+        if (currentButton !== null) {
+            currentButton.textContent = "⏸";
+        }
+
+        return;
+    }
+
+
+    if (currentPlaylist.length > 0) {
+
+        if (isShuffleOn) {
+
+            let randomIndex = Math.floor(Math.random() * currentPlaylist.length);
+
+            while (randomIndex === currentIndex && currentPlaylist.length > 1) {
+                randomIndex = Math.floor(Math.random() * currentPlaylist.length);
+            }
+
+            currentIndex = randomIndex;
+
+        } else {
+
+            currentIndex++;
+
+        }
+
+
+        if (currentIndex < currentPlaylist.length) {
+
+            loadSong(currentPlaylist[currentIndex]);
+            audio.play();
+
+            controlButtons[1].textContent = "⏸";
+
+            if (currentButton !== null) {
+                currentButton.textContent = "⏸";
+            }
+
+        } else {
+
+            currentPlaylist = [];
+            currentIndex = 0;
+
+            if (currentButton !== null) {
+                currentButton.textContent = "▶";
+                currentButton = null;
+            }
+
+            controlButtons[1].textContent = "▶";
+        }
+
+    } else {
+
+        if (currentButton !== null) {
+            currentButton.textContent = "▶";
+            currentButton = null;
+        }
+
+        controlButtons[1].textContent = "▶";
+    }
+
+});
+
 
 let seekbar = document.querySelector(".seekbar-container input");
+
 let currentTimeDisplay = document.querySelector(".seekbar-container span:first-child");
+
 let durationDisplay = document.querySelector(".seekbar-container span:last-child");
 
+
 audio.addEventListener("loadedmetadata", () => {
+
     seekbar.max = audio.duration;
+
+    seekbar.value = 0;
+
     durationDisplay.textContent = formatTime(audio.duration);
+
+    currentTimeDisplay.textContent = "0:00";
+
 });
+
 
 audio.addEventListener("timeupdate", () => {
+
     seekbar.value = audio.currentTime;
+
     currentTimeDisplay.textContent = formatTime(audio.currentTime);
+
 });
+
 
 seekbar.addEventListener("input", () => {
+
     audio.currentTime = seekbar.value;
+
 });
 
+
 function formatTime(seconds) {
+
     let minutes = Math.floor(seconds / 60);
+
     let secs = Math.floor(seconds % 60);
 
     if (secs < 10) {
@@ -182,8 +410,36 @@ function formatTime(seconds) {
     return `${minutes}:${secs}`;
 }
 
+
 let volumeSlider = document.querySelector(".volume-control input");
 
+
 volumeSlider.addEventListener("input", () => {
+
     audio.volume = volumeSlider.value / 100;
+
+});
+
+function loadSong(song) {
+
+    audio.src = song.audio;
+
+    currentSongName.textContent = song.title;
+    artistName.textContent = song.artist;
+    songImage.src = song.image;
+
+}
+
+let likeButton = document.querySelector(".like-song");
+
+likeButton.addEventListener("click", () => {
+
+    likeButton.classList.toggle("liked");
+
+    if (likeButton.classList.contains("liked")) {
+        likeButton.textContent = "♥";
+    } else {
+        likeButton.textContent = "♡";
+    }
+
 });

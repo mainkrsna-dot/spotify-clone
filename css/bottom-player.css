@@ -4,14 +4,15 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 10vh;
-  background-color: #000000;
+  height: 90px;
+  background: #181818;
   color: #ffffff;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 18px;
   box-sizing: border-box;
   z-index: 100;
+  border-top: 1px solid #282828;
 }
 
 .song-info {
@@ -19,53 +20,159 @@
   align-items: center;
   gap: 12px;
   width: 30%;
+  min-width: 280px;
 }
 
 .song-image {
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
+  border-radius: 4px;
   object-fit: cover;
+  background: #282828;
+}
+
+.song-details {
+  min-width: 0;
+  max-width: 260px;
 }
 
 .current-song-name {
   margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .artist-name {
-  margin: 4px 0 0;
-  font-size: 13px;
+  margin: 5px 0 0;
+  font-size: 12px;
   color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.like-song {
+  border: none;
+  background: none;
+  color: #b3b3b3;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.like-song:hover {
+  color: #ffffff;
+  transform: scale(1.08);
 }
 
 .player-controls {
-  width: 40%;
-  flex-direction: column;
+  width: 45%;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  grid-template-rows: 36px 22px;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  column-gap: 12px;
+}
+
+.extra-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shuffle-control {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.repeat-control {
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .controls {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 22px;
 }
 
-.controls button {
+.shuffle-btn,
+.repeat-btn {
+  font-size: 20px;
+  font-weight: normal;
+  padding: 0;
+  color: #b3b3b3;
+}
+
+.shuffle-btn.active,
+.repeat-btn.active {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.controls button,
+.extra-controls button {
   border: none;
   background: none;
-  color: #ffffff;
-  font-size: 20px;
+  color: #b3b3b3;
   cursor: pointer;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.controls button:hover,
+.extra-controls button:hover {
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.controls button:nth-child(2) {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls button:nth-child(2):hover {
+  transform: scale(1.06);
+  color: #000000;
 }
 
 .seekbar-container {
+  grid-column: 1 / 4;
+  grid-row: 2;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+.seekbar-container span {
+  font-size: 11px;
+  color: #b3b3b3;
+  min-width: 30px;
+  text-align: center;
+}
+
 .seekbar-container input {
   flex: 1;
+  height: 4px;
+  cursor: pointer;
+  accent-color: #ffffff;
 }
 
 .volume-control {
@@ -73,9 +180,33 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
+}
+
+.volume-control span {
+  font-size: 16px;
 }
 
 .volume-control input {
   width: 100px;
+  height: 4px;
+  cursor: pointer;
+  accent-color: #ffffff;
+}
+
+.like-song {
+  border: none;
+  outline: none;
+  background: none;
+  color: #b3b3b3;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.like-song.liked {
+  color: #1ed760;
+  border: none;
+  outline: none;
+  background: none;
 }
