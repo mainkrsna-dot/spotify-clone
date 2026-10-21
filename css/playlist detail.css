@@ -1,0 +1,138 @@
+.playlist-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--playlist-detail-bg, #121212);
+  display: none;
+  z-index: 1500;
+  overflow-y: auto;
+  transition: background 0.3s ease;
+}
+
+.playlist-detail-overlay.active {
+  display: block;
+}
+
+.playlist-detail {
+  min-height: 100%;
+  padding: 30px 30px 130px;
+  box-sizing: border-box;
+}
+
+.playlist-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.playlist-back {
+  border: none;
+  background: #282828;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.playlist-detail-header p {
+  color: #b3b3b3;
+  margin: 0 0 5px;
+  font-size: 13px;
+}
+
+.playlist-detail-header h1 {
+  color: #fff;
+  margin: 0 0 6px;
+  font-size: 32px;
+}
+
+.playlist-detail-header span {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.playlist-detail-controls {
+  margin-bottom: 25px;
+}
+
+.playlist-detail-play {
+  border: none;
+  background: #1ed760;
+  color: #000;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.playlist-detail-songs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.playlist-song {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.playlist-song:hover {
+  background: #282828;
+}
+
+.playlist-song-image {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #282828;
+  flex-shrink: 0;
+}
+
+.playlist-song-info {
+  min-width: 0;
+}
+
+.playlist-song-info h4 {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-song-info p {
+  color: #b3b3b3;
+  font-size: 13px;
+  margin: 0;
+}
+
+.playlist-empty-message {
+  color: #b3b3b3;
+  font-size: 15px;
+  padding: 30px 10px;
+}
+
+@media (max-width: 640px) {
+  .playlist-detail {
+    padding: 20px 15px 90px;
+  }
+
+  .playlist-detail-header h1 {
+    font-size: 24px;
+  }
+
+  .playlist-song-image {
+    width: 48px;
+    height: 48px;
+  }
+}

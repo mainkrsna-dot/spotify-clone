@@ -15,21 +15,32 @@
   <link rel="stylesheet" href="../css/left.css">
   <link rel="stylesheet" href="../css/right.css">
   <link rel="stylesheet" href="../css/bottom-player.css">
+  <link rel="stylesheet" href="../css/expanded-player.css">
+  <link rel="stylesheet" href="../css/playlist detail.css">
+  <link rel="stylesheet" href="../css/popup.css">
+  <link rel="stylesheet" href="../css/toast.css">
+  <link rel="stylesheet" href="../css/liked songs page.css">
+  <link rel="stylesheet" href="../css/responsive.css">
 </head>
 
 <body>
   <div class="header flex">
     <div class="leftHeader flex item-center">
       <div class="logo">
-        <img class="invert" src="../svgs/logos.svg" alt="spotify logo">
+        <a href="./index.html">
+          <img class="invert" src="../svgs/logos.svg" alt="spotify logo">
+        </a>
       </div>
       <div class="homeandsearch flex">
         <div class="home">
-          <img src="../svgs/home.svg" alt="">
+          <a href="./index.html">
+            <img src="../svgs/home.svg" alt="">
+          </a>
         </div>
+
         <div class="searchBar flex">
           <img src="../svgs/search.svg" alt="">
-          <input type="text" placeholder="What do you want to play?">
+          <input type="text" class="search-input" placeholder="What do you want to play?" autocomplete="off">
           <img class="browse" src="../svgs/browse.svg" alt="">
         </div>
       </div>
@@ -37,16 +48,78 @@
 
     <div class="rightHeader flex">
       <div class="section1 flex">
-        <p>Premium</p>
-        <p>Support</p>
-        <p>Download</p>
+        <a href="https://www.spotify.com/in-en/premium/" target="_blank" rel="noopener noreferrer">Premium</a>
+        <a href="https://support.spotify.com/in-en/" target="_blank" rel="noopener noreferrer">Support</a>
+        <a href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank"
+          rel="noopener noreferrer">Download</a>
       </div>
       <!-- <div class="section2 flex">
         <p> <img class="install" src="../svgs/install.svg" alt="">Install App</p>
         <p>Sign up</p>
         <button class="logIn">Log in</button> -->
     </div>
-  </div>
+
+    <div class="mobile-header">
+
+      <div class="mobile-title-area">
+        <h2 class="mobile-page-title">Good morning</h2>
+      </div>
+
+      <div class="mobile-search-bar">
+        <img src="../svgs/search.svg" alt="">
+
+        <input type="text" class="mobile-search-input" placeholder="What do you want to play?" autocomplete="off">
+
+        <button class="mobile-search-close">✕</button>
+      </div>
+
+      <div class="settings-wrapper">
+        <button class="mobile-settings" aria-label="Settings">⚙</button>
+
+        <div class="settings-dropdown">
+
+          <div class="settings-title">Settings</div>
+
+          <button class="settings-option" data-setting="account">
+            <span>Account</span>
+            <span class="setting-value">›</span>
+          </button>
+
+          <button class="settings-option" data-setting="playback">
+            <span>Autoplay</span>
+            <span class="setting-value" id="autoplay-value">On</span>
+          </button>
+
+          <button class="settings-option" data-setting="audio">
+            <span>Audio quality</span>
+            <span class="setting-value" id="audio-quality-value">Normal</span>
+          </button>
+
+          <button class="settings-option" data-setting="data">
+            <span>Data Saver</span>
+            <span class="settings-toggle" id="data-toggle"></span>
+          </button>
+
+          <button class="settings-option" data-setting="notifications">
+            <span>Notifications</span>
+            <span class="setting-value" id="notification-value">Off</span>
+          </button>
+
+          <button class="settings-option" data-setting="theme">
+            <span>Theme</span>
+            <span class="setting-value" id="theme-value">Dark</span>
+          </button>
+
+          <div class="settings-divider"></div>
+
+          <button class="settings-option settings-logout" data-setting="logout">
+            Log out
+          </button>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 
 
@@ -75,19 +148,64 @@
         </div>
       </div>
 
-      <div class="imp-links language flex">
-        <p>Legal</p>
-        <p>Safety & Privacy Center</p>
-        <p>Privacy Policy</p>
-        <p>cookies</p>
-        <p>About Ads</p>
-        <p>Accessibility</p>
+      <div class="user-playlists"></div>
+
+      <div class="saved-songs-library">
+
+        <div class="liked-songs-library-card" id="liked-songs-library-card">
+
+          <div class="liked-songs-card-image">
+            ♥
+          </div>
+
+          <div class="liked-songs-card-info">
+            <h4>Liked Songs</h4>
+            <p>Playlist • <span class="saved-songs-count">0</span> songs</p>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="cookies">Cookies</div>
+      <div class="imp-links language flex">
+
+        <a href="https://www.spotify.com/in-en/legal/end-user-agreement/" target="_blank" rel="noopener noreferrer">
+          Legal
+        </a>
+
+        <a href="https://www.spotify.com/in-en/safetyandprivacy/" target="_blank" rel="noopener noreferrer">
+          Safety & Privacy Center
+        </a>
+
+        <a href="https://www.spotify.com/in-en/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">
+          Privacy Policy
+        </a>
+
+        <a href="https://www.spotify.com/in-en/legal/cookies-policy/" target="_blank" rel="noopener noreferrer">
+          Cookies
+        </a>
+
+        <a href="https://www.spotify.com/in-en/legal/advertising/" target="_blank" rel="noopener noreferrer">
+          About Ads
+        </a>
+
+        <a href="https://www.spotify.com/in-en/accessibility/" target="_blank" rel="noopener noreferrer">
+          Accessibility
+        </a>
+
+      </div>
+
+      <div class="cookies">
+        <a href="https://www.spotify.com/in-en/legal/cookies-policy/" target="_blank" rel="noopener noreferrer">
+          Cookies
+        </a>
+      </div>
 
       <div class="language-selector">
-        <button><img class="invert" src="../svgs/language.svg" alt="">English</button>
+        <button>
+          <img class="invert" src="../svgs/language.svg" alt="">
+          English
+        </button>
       </div>
     </div>
 
@@ -944,71 +1062,190 @@
 
       <div class="footer border">
         <div class="footer-links flex border">
+
           <div class="multiple-links flex border">
+
+            <!-- Company -->
             <div class="company">
               <p>Company</p>
               <ul>
-                <li>About</li>
-                <li>Jobs</li>
-                <li>For the Record</li>
+                <li>
+                  <a href="https://www.spotify.com/in/about-us/contact/" target="_blank" rel="noopener noreferrer">
+                    About
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.lifeatspotify.com/" target="_blank" rel="noopener noreferrer">
+                    Jobs
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://newsroom.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    For the Record
+                  </a>
+                </li>
               </ul>
             </div>
 
+
+            <!-- Communities -->
             <div class="communities">
               <p>Communities</p>
               <ul>
-                <li>For Artists</li>
-                <li>Developers</li>
-                <li>Advertising</li>
-                <li>Investors</li>
-                <li>Vendors</li>
+                <li>
+                  <a href="https://artists.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    For Artists
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://developer.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    Developers
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://ads.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    Advertising
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://investors.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    Investors
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://spotifyforvendors.com/" target="_blank" rel="noopener noreferrer">
+                    Vendors
+                  </a>
+                </li>
               </ul>
             </div>
 
+
+            <!-- Useful Links -->
             <div class="useful-links">
               <p>Useful links</p>
               <ul>
-                <li>Support</li>
-                <li>Free Mobile App</li>
-                <li>Popular by Country</li>
-                <li>Import your music</li>
+                <li>
+                  <a href="https://support.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    Support
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.spotify.com/in/download/" target="_blank" rel="noopener noreferrer">
+                    Free Mobile App
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.spotify.com/in/" target="_blank" rel="noopener noreferrer">
+                    Popular by Country
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://support.spotify.com/" target="_blank" rel="noopener noreferrer">
+                    Import your music
+                  </a>
+                </li>
               </ul>
             </div>
 
+
+            <!-- Spotify Plans -->
             <div class="spotify-plans">
               <p>Spotify Plans</p>
               <ul>
-                <li>Premium Standard</li>
-                <li>Premium Platinum</li>
-                <li>Premium Student</li>
-                <li>Spotify Free</li>
+                <li>
+                  <a href="https://www.spotify.com/in/premium/" target="_blank" rel="noopener noreferrer">
+                    Premium Standard
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.spotify.com/in/premium/" target="_blank" rel="noopener noreferrer">
+                    Premium Platinum
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.spotify.com/in/premium/" target="_blank" rel="noopener noreferrer">
+                    Premium Student
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.spotify.com/in/free/" target="_blank" rel="noopener noreferrer">
+                    Spotify Free
+                  </a>
+                </li>
               </ul>
             </div>
+
           </div>
 
+
+          <!-- Social Links -->
           <div class="social-links">
-            <button class="instagram">
-              <img class="invert" src="../svgs/insta.svg" alt="">
-            </button>
-            <button class="x">
-              <img class="invert" src="../svgs/x.svg" alt="">
-            </button>
-            <button class="facebook">
-              <img class="invert" src="../svgs/facebook.svg" alt="">
-            </button>
+
+            <a class="instagram" href="https://www.instagram.com/spotify/" target="_blank" rel="noopener noreferrer"
+              aria-label="Spotify on Instagram">
+              <img class="invert" src="../svgs/insta.svg" alt="Instagram">
+            </a>
+
+            <a class="x" href="https://x.com/spotify" target="_blank" rel="noopener noreferrer"
+              aria-label="Spotify on X">
+              <img class="invert" src="../svgs/x.svg" alt="X">
+            </a>
+
+            <a class="facebook" href="https://www.facebook.com/Spotify/" target="_blank" rel="noopener noreferrer"
+              aria-label="Spotify on Facebook">
+              <img class="invert" src="../svgs/facebook.svg" alt="Facebook">
+            </a>
+
           </div>
 
         </div>
+
+
         <div class="spotify-copyright border flex">
           © 2026 Spotify AB
         </div>
+
       </div>
     </div>
   </div>
 
   <div class="bottom-player flex">
 
+    <!-- MOBILE EXPANDED PLAYER HEADER -->
+
+    <div class="mobile-player-header">
+      <button class="collapse-player">⌄</button>
+      <span>Now Playing</span>
+      <div class="player-menu-wrapper">
+        <button class="player-menu">•••</button>
+
+        <div class="player-menu-dropdown">
+          <button class="menu-action" data-action="queue">Add to queue</button>
+          <button class="menu-action" data-action="playlist">Add to playlist</button>
+          <button class="menu-action" data-action="share">Share</button>
+          <button class="menu-action" data-action="copy">Copy song path</button>
+          <button class="menu-action" data-action="artwork">Open album artwork</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SONG INFORMATION -->
+
     <div class="song-info">
+
       <img class="song-image" src="" alt="">
 
       <div class="song-details">
@@ -1017,13 +1254,25 @@
       </div>
 
       <button class="like-song">♡</button>
+
     </div>
 
+    <!-- LARGE IMAGE FOR MOBILE EXPANDED PLAYER -->
+
+    <div class="mobile-expanded-art">
+      <img class="expanded-song-image" src="" alt="">
+    </div>
+
+    <!-- PLAYER CONTROLS -->
     <div class="player-controls">
+
+      <!-- SHUFFLE -->
 
       <div class="extra-controls shuffle-control">
         <button class="shuffle-btn">⤨</button>
       </div>
+
+      <!-- PREVIOUS / PLAY / NEXT -->
 
       <div class="controls flex">
         <button>⏮</button>
@@ -1031,17 +1280,22 @@
         <button>⏭</button>
       </div>
 
+      <!-- REPEAT -->
+
       <div class="extra-controls repeat-control">
         <button class="repeat-btn">↻</button>
       </div>
+
+      <!-- SEEKBAR -->
 
       <div class="seekbar-container">
         <span>0:00</span>
         <input type="range" min="0" max="100" value="0">
         <span>0:00</span>
       </div>
-
     </div>
+
+    <!-- DESKTOP VOLUME -->
 
     <div class="volume-control">
       <span>🔊</span>
@@ -1057,6 +1311,123 @@
       <button class="signUpFree">Sign up free</button>
     </div>
   </div> -->
+
+  <div class="mobile-bottom-nav">
+
+    <button>
+      <img src="../svgs/home.svg" alt="">
+      <span>Home</span>
+    </button>
+
+    <button>
+      <img src="../svgs/search.svg" alt="">
+      <span>Search</span>
+    </button>
+
+    <button>
+      <img src="../svgs/library.svg" alt="">
+      <span>Your Library</span>
+    </button>
+
+
+    <a class="mobile-get-app" href="https://play.google.com/store/apps/details?id=com.spotify.music" target="_blank"
+      rel="noopener noreferrer">
+      <img src="../svgs/install.svg" alt="">
+      <span>Get App</span>
+    </a>
+
+  </div>
+
+  <div class="playlist-modal-overlay">
+    <div class="playlist-modal">
+      <button class="playlist-modal-close">×</button>
+
+      <h2>Create playlist</h2>
+
+      <input type="text" class="playlist-name-input" placeholder="My Playlist #1" maxlength="50" autocomplete="off">
+
+      <div class="playlist-modal-actions">
+        <button class="playlist-cancel">Cancel</button>
+        <button class="playlist-create">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="playlist-detail-overlay" id="playlist-detail-overlay">
+    <div class="playlist-detail">
+
+      <div class="playlist-detail-header">
+        <button class="playlist-back">←</button>
+
+        <div>
+          <p>Your Playlist</p>
+          <h1 id="playlist-detail-name"></h1>
+          <span id="playlist-detail-count"></span>
+        </div>
+      </div>
+
+      <div class="playlist-detail-controls">
+        <button class="playlist-detail-play">▶</button>
+      </div>
+
+      <div class="playlist-detail-songs" id="playlist-detail-songs">
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="spotify-toast" id="spotify-toast">
+    <div class="spotify-toast-title">
+      🎙 Podcasts
+    </div>
+
+    <div class="spotify-toast-message">
+      We're still working on it. Stay tuned!
+    </div>
+  </div>
+
+  <div class="add-playlist-overlay" id="add-playlist-overlay">
+    <div class="add-playlist-modal">
+
+      <div class="add-playlist-header">
+        <h2>Add to playlist</h2>
+
+        <button class="add-playlist-close">
+          ×
+        </button>
+      </div>
+
+      <div class="add-playlist-list" id="add-playlist-list"></div>
+
+      <button class="create-playlist-from-player">
+        + Create playlist
+      </button>
+
+    </div>
+  </div>
+
+  <div class="liked-songs-overlay" id="liked-songs-overlay">
+    <div class="liked-songs-page">
+
+      <div class="liked-songs-header">
+        <button class="liked-songs-back">←</button>
+
+        <div>
+          <p>Your Library</p>
+          <h1>Liked Songs</h1>
+          <span id="liked-songs-page-count">0 songs</span>
+        </div>
+      </div>
+
+      <div class="liked-songs-controls">
+        <button class="liked-songs-play">▶</button>
+      </div>
+
+      <div class="liked-songs-page-list" id="liked-songs-page-list"></div>
+
+    </div>
+  </div>
 
   <script src="../js/script.js"></script>
 </body>

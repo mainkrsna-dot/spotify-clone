@@ -1,0 +1,38 @@
+.spotify-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translate(-50%, 30px);
+  width: 320px;
+  max-width: calc(100vw - 40px);
+  background: #282828;
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 2000;
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease;
+}
+
+.spotify-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.spotify-toast-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.spotify-toast-message {
+  color: #b3b3b3;
+  font-size: 13px;
+}

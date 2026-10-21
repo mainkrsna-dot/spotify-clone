@@ -29,16 +29,17 @@
   gap: 8px;
 }
 
-.section1 p,
+.section1 a,
 .section2 p {
   color: #b3b3b3;
   font-size: 16px;
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.section1 p:hover,
+.section1 a:hover,
 .section2 p:hover {
   color: white;
 }
@@ -111,4 +112,13 @@
 .homeandsearch {
   align-items: center;
   gap: 8px;
+}
+
+.logo a,
+.home a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }

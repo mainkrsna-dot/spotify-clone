@@ -18,3 +18,95 @@ body {
   width: 25px;
   filter: invert(1);
 }
+
+body.light-theme {
+    background: #f5f5f5;
+    color: #111;
+}
+
+body.light-theme .header {
+    background: #ffffff;
+}
+
+body.light-theme .left,
+body.light-theme .right {
+    background: #ffffff;
+}
+
+body.light-theme .searchBar,
+body.light-theme .home {
+    background: #e8e8e8;
+}
+
+body.light-theme .searchBar input {
+    color: #111;
+}
+
+body.light-theme .searchBar input::placeholder {
+    color: #666;
+}
+
+body.light-theme .section1 a {
+    color: #555;
+}
+
+body.light-theme .section1 a:hover {
+    color: #111;
+}
+
+body.light-theme .card h3,
+body.light-theme .artists-card h3,
+body.light-theme .album-and-singles-card h3,
+body.light-theme .radio-card h3,
+body.light-theme .charts-card h3 {
+    color: #111;
+}
+
+body.light-theme .card p,
+body.light-theme .artists-card p,
+body.light-theme .album-and-singles-card p,
+body.light-theme .radio-card p,
+body.light-theme .charts-card p {
+    color: #666;
+}
+
+body.light-theme .mobile-header {
+    color: #111;
+}
+
+body.light-theme .mobile-settings {
+    color: #111;
+}
+
+body.light-theme .bottom-player {
+    background: #ffffff;
+    color: #111;
+    border-top-color: #ddd;
+}
+
+body.light-theme .current-song-name {
+    color: #111;
+}
+
+body.light-theme .artist-name {
+    color: #666;
+}
+
+body.light-theme .settings-dropdown {
+    background: #ffffff;
+    border-color: #ddd;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .18);
+}
+
+body.light-theme .settings-title,
+body.light-theme .settings-option {
+    color: #111;
+}
+
+body.light-theme .settings-option:hover {
+    background: #eeeeee;
+}
+
+body.light-theme .settings-divider {
+    background: #ddd;
+}

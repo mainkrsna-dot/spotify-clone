@@ -136,3 +136,73 @@
 .play-button:hover {
   transform: translateY(0) scale(1.06);
 }
+
+/* =========================================================
+   SEARCH FUNCTIONALITY
+   ========================================================= */
+
+/* Search input */
+.searchBar {
+  position: relative;
+}
+
+.searchBar input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+}
+
+.searchBar input::placeholder {
+  color: #b3b3b3;
+}
+
+/* No results message */
+.search-no-results {
+  width: 100%;
+  padding: 60px 24px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #a7a7a7;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Hidden cards */
+.card[hidden],
+.artists-card[hidden],
+.album-and-singles-card[hidden],
+.radio-card[hidden],
+.charts-card[hidden],
+.section-wrapper[hidden] {
+  display: none !important;
+}
+
+/* Keep section layout stable while searching */
+.section-wrapper.search-hidden {
+  display: none !important;
+}
+
+/* Search active state */
+.searchBar.search-active {
+  background-color: #242424;
+}
+
+.searchBar.search-active input {
+  color: #fff;
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .searchBar input {
+    font-size: 13px;
+  }
+
+  .search-no-results {
+    padding: 45px 16px;
+    font-size: 16px;
+  }
+}
